@@ -62,7 +62,7 @@ namespace WpfMiniProject
                     person.FirstName = firstNameText.Text;
                     person.LastName = lastNameText.Text;
                     person.Addresses = addresses.ToList();
-                    person.IsActive = isActiveCheck.IsChecked != null ? (bool)isActiveCheck.IsChecked : false;
+                    person.IsActive = isActiveCheck.IsChecked ?? false;
                 }
                 else 
                 {
@@ -71,7 +71,7 @@ namespace WpfMiniProject
                         FirstName = firstNameText.Text,
                         LastName = lastNameText.Text,
                         Addresses = addresses.ToList(),
-                        IsActive = isActiveCheck.IsChecked != null ? (bool)isActiveCheck.IsChecked : false
+                        IsActive = isActiveCheck.IsChecked ?? false
                     };
                 }
                 
