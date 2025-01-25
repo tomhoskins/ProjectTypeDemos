@@ -23,6 +23,9 @@ namespace WpfMiniProject
         {
             InitializeComponent();
             PeopleListBox.ItemsSource = people;
+            var demoPerson = new PersonModel { FirstName = "Michael", LastName = "Scott", IsActive = true };
+            demoPerson.Addresses.Add(new AddressModel { StreetAddress = "123 Scranton Dr", City = "Scranton", State = "PA", ZipCode = "12345" });
+            people.Add(demoPerson);
         }
 
         public void SavePerson(PersonModel person)

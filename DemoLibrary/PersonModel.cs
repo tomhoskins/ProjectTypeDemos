@@ -13,7 +13,7 @@ namespace DemoLibrary
         public bool IsActive { get; set; }
         public List<AddressModel> Addresses { get; set; } = new List<AddressModel>();
 
-        public string PersonDisplayValue => Addresses.Count > 0 ? $"{FirstName} {LastName} - {Addresses[0].AddressDisplayValue}" :
-                                                                  $"{FirstName} {LastName}";   
+        public string PersonDisplayValue =>  IsActive ? $"{FirstName} {LastName} - Active" : $"{FirstName} {LastName} - Inactive";
+        public string AddressDisplayValue =>  Addresses.Count > 0 ? Addresses[0].AddressDisplayValue : "";
     }
 }

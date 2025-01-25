@@ -6,25 +6,30 @@
         xmlns:local="clr-namespace:WpfMiniProject"
         mc:Ignorable="d"
         Foreground="Black"
+        Background="White"
         FontSize="18"
         Title="Person List by Tom Hoskins" Height="400" Width="400">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" MinWidth="300">
             <TextBlock VerticalAlignment="Center">People:</TextBlock>
-            <ListBox x:Name="PeopleListBox" MinHeight="200">
+            <ListBox x:Name="PeopleListBox" MinHeight="200" Background="LightGray">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding PersonDisplayValue}"/>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="{Binding Path=PersonDisplayValue}"/>
+                            <TextBlock Text="{Binding Path=AddressDisplayValue}" FontSize="12"/>
+                        </StackPanel>
+                        
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
